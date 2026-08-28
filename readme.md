@@ -13,10 +13,20 @@ Heute habe ich bei BBB_markdown alle Aufgaben erledigt und die Grundkentnisse f�
 Ich bin noch über Qv und Lernatelierprozess informiert geworden. Ich habe meine Plane für nächstes LP gemacht und Repository für  die erste LP erstellt
 
 ## 28.8.2026 (Planung)
-- [ ] Spielgeschichte schreiben, Spielablauf abklaeren und ein PAP für demo erstellen
-- [ ] Demospiel mit C# schreiben und ausprobieren
-- [ ] Eine neue Mechanic finden und ins Spiel bringen
+- [ ] Spielgeschichte schreiben, Spielablauf abklaeren
+- [x] Demospiel mit C# schreiben und ausprobieren
+- [x] Eine neue Mechanic finden und ins Spiel bringen
 - [ ] Eine stabile version erstellen und neue Mechanics planen
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+# Lern-Periode 1
+28.08.2026
 
+## 28.8.2026
+Heute habe ich mit dem Text-Spiel angefangen. Ich habe einen Tutorial für Mechanics erstellt. Ich hatte Probleme mit Inventory System, deswegen musste ich über Methode rechecieren. Nachher habe ich mit eine neue Methode "myText" angefangen. Ich nutze es statt Console.WriteLine, weil ich den Schnelligkeit von den Texte ändern will. Das Method funktioniert aber ich muss es noch modifizieren.
+
+## 04.9.2026 (Planung)
+- [ ] Das Method fertigstellen, damit nicht das ganze Text direkt angegeben wird und es langsam kommt
+- [ ] Variablen "health" und "attack" (und dazu gehörende Modifikatoren) hinzufügen, sie werden in dem Spiel als Stats benutzt
+- [ ] Mit dem Erste Kapitel des Geschichtes anfangen. Damit werden die Entscheidungen, Inventory usw verwendet
 
