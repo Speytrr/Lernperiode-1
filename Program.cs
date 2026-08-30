@@ -160,7 +160,7 @@ public class Program
         while (true) 
         {
             myText("Would you like to see the tutorial or start with chapter one?");
-            myText("> start");
+            myText("> tutorial");
             myText("> chapter 1");
 
             chapterChoice = Console.ReadLine();
