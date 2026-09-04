@@ -29,9 +29,24 @@ Heute habe ich mit dem Text-Spiel angefangen. Ich habe einen Tutorial für Mecha
 - [x] Das Method fertigstellen, damit nicht das ganze Text direkt angegeben wird und es langsam kommt
 - [ ] (Nicht mehr nötig) -Variablen "health" und "attack" (und dazu gehörende Modifikatoren) hinzufügen, sie werden in dem Spiel als Stats benutzt-
 - [x] Mit dem Erste Kapitel des Geschichtes anfangen. Damit werden die Entscheidungen, Inventory usw verwendet
-      
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Lern-Periode 1
+04.09.2026
+
 ## 04.9.2026 (Neu-Planung)
-- [ ] Funktion getMec verbessern, damit die Funktionen richtig verteilt wird
-- [ ] Dialogen in eine andere Ort sammeln, damit es keine unnötig viele Zeilen gibt
+- [x] Funktion getMec verbessern, damit die Funktionen richtig verteilt wird
+- [x] Dialogen in eine andere Ort sammeln, damit es keine unnötig viele Zeilen gibt
 - [ ] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
+
+## 04.9.2026
+Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialougen bisschen viel Platz nehmen. Deswegen habe ich getMec verbessert und mit TxtToCOde funktion angefangen. Ich schreibe die Geschichte ins eine Textdatei und dann wird es von Programm ins Spiel hinzugefügt. Ich habe die Basis fertiggestellt aber ich muss noch die Funktionen verfügbar machen.
+
+## 11.9.2026 (Planung)
+- [ ] TxtToCode fertigstellen. Funktion muss if, variablen etc. verstehen und input/output richtig geben können
+- [ ] Alle Dialougen auf Tutorial und Chapter 1 als txt umwandeln, damit wird game logic und spiel getrennt
+- [ ] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
+
+
+
+
 
