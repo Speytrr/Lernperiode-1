@@ -27,6 +27,6 @@ Heute habe ich mit dem Text-Spiel angefangen. Ich habe einen Tutorial für Mecha
 
 ## 04.9.2026 (Planung)
 - [x] Das Method fertigstellen, damit nicht das ganze Text direkt angegeben wird und es langsam kommt
-- [ ] Variablen "health" und "attack" (und dazu gehörende Modifikatoren) hinzufügen, sie werden in dem Spiel als Stats benutzt
-- [ ] Mit dem Erste Kapitel des Geschichtes anfangen. Damit werden die Entscheidungen, Inventory usw verwendet
+- [ ] (Nicht mehr nötig) -Variablen "health" und "attack" (und dazu gehörende Modifikatoren) hinzufügen, sie werden in dem Spiel als Stats benutzt-
+- [x] Mit dem Erste Kapitel des Geschichtes anfangen. Damit werden die Entscheidungen, Inventory usw verwendet
 
