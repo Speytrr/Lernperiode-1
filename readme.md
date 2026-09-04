@@ -29,4 +29,9 @@ Heute habe ich mit dem Text-Spiel angefangen. Ich habe einen Tutorial für Mecha
 - [x] Das Method fertigstellen, damit nicht das ganze Text direkt angegeben wird und es langsam kommt
 - [ ] (Nicht mehr nötig) -Variablen "health" und "attack" (und dazu gehörende Modifikatoren) hinzufügen, sie werden in dem Spiel als Stats benutzt-
 - [x] Mit dem Erste Kapitel des Geschichtes anfangen. Damit werden die Entscheidungen, Inventory usw verwendet
+      
+## 04.9.2026 (Neu-Planung)
+- [ ] Funktion getMec verbessern, damit die Funktionen richtig verteilt wird
+- [ ] Dialogen in eine andere Ort sammeln, damit es keine unnötig viele Zeilen gibt
+- [ ] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
 
