@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
+using System.IO;
+using System.IO;
 
 
 public class Program
@@ -11,19 +13,49 @@ public class Program
     static string name;
 
     static List<string> inventory = new List<string>();
-    static string inventoryMessage = "";
 
     static Dictionary<string, string> itemDescriptions = new Dictionary<string, string>
-{
-    { "water", "It's just... H2O I guess." },
-    { "key 231", "A small rusty key with numbers 231" },
-    { "small knife", "A small knife. Useful for cutting things." },
-    { "photograph", "An old photograph, two person are in the picture" },
-};
+    {
+        { "water", "It's just... H2O I guess." },
+        { "key 231", "A small rusty key with numbers 231" },
+        { "small knife", "A small knife. Useful for cutting things." },
+        { "photograph", "An old photograph, two people are in the picture" },
+    };
+
+    //txt into code
+    static void TxtToCode(string file)
+    {
+        int lineNumber = 0;
+        string path = Path.Combine(
+            @"C:\dev\M319\Entscheidung-Game\Entscheidung-Game\Story",
+            file + ".txt"
+        );
+
+        using StreamReader reader = new StreamReader(path);
+
+        string? line;
+
+        while ((line = reader.ReadLine()) != null)
+        {
+            if (line == "CHOICE")
+            {
+                string decision = Console.ReadLine();
+
+                    while(line != "ENDCHOICE")
+                    {
+                        
+                    }
+            }
+            else
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }                
 
 
-    //Animated text version of Console.WriteLine
-    static void myText(string input, int speed = 40)
+    // Animated text version of Console.WriteLine
+    static void myText(string input, int speed = 30)
     {
         foreach (char letter in input)
         {
@@ -33,7 +65,38 @@ public class Program
         Console.WriteLine("");
     }
 
-    //Item Description
+    //Press to continue function
+    static void PressTo(string title)
+    {
+        Console.WriteLine("");
+        myText("Loading...");
+        Console.WriteLine("");
+        myText(title);
+        myText("Press SPACE to continue...");
+
+
+        while (true)
+        {
+            if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
+            {
+                break;
+            }
+        }
+
+    }
+
+
+    // This avoids clone items
+    static void AddItem(string item)
+    {
+        if (!inventory.Contains(item))
+        {
+            inventory.Add(item);
+        }
+    }
+
+
+    // Item Description
     static void showItemDescription(string item)
     {
         if (itemDescriptions.ContainsKey(item))
@@ -46,7 +109,8 @@ public class Program
         }
     }
 
-    //Inventory Management
+
+    // Inventory Management
     static string inventoryMenu(List<string> inventory)
     {
         Console.WriteLine("");
@@ -103,30 +167,20 @@ public class Program
     }
 
 
-    //static string to call out functions like inventory, help etc.
+    // Static string to call out functions like inventory, help etc.
     static string getMec(List<string> inventory)
-        {
-            while (true)
+    {
+        while (true)
         {
             string input = Console.ReadLine();
 
             if (input == "inventory")
             {
-                if (inventoryMessage != "")
-                {
-                    myText(inventoryMessage);
-                    continue;
-                }
-
                 string result = inventoryMenu(inventory);
-
-                if (result != "back")
-                {
-                    return result;
-                }
+                return result;
             }
             else if (input == "help")
-                {
+            {
                 Console.WriteLine("");
                 Console.WriteLine("Available commands:");
                 Console.WriteLine("- inventory");
@@ -134,30 +188,45 @@ public class Program
                 Console.WriteLine("- help");
                 Console.WriteLine("");
 
-                    continue;
-                }
-                else
-                {
-                    return input;
-                }
+                continue;
+            }
+            else
+            {
+                return input;
             }
         }
+    }
 
-    //MAIN
+
+    // MAIN
     public static void Main()
     {
         string chapterChoice = "nothing";
-
-
-        //Intro
+        string nametry = "";
+        // Intro
         myText("Welcome player, how would you wanna be called?");
-        name = Console.ReadLine();
+
+        while (nametry == "")
+        {
+            nametry = Console.ReadLine();
+            if ( nametry != "")
+        {
+                name = nametry;
+                break;
+        }
+            else
+        {
+                Console.WriteLine("Try again");
+        }
+        }
+
+
         myText(name + "... That's a nice name");
         myText("Welcome to the game " + name);
 
 
-        //Chapter selecting
-        while (true) 
+        // Chapter selecting
+        while (true)
         {
             myText("Would you like to see the tutorial or start with chapter one?");
             myText("> tutorial");
@@ -171,8 +240,6 @@ public class Program
                 myText("Very well, have fun");
                 Tutorial(inventory);
                 break;
-
-
             }
             else if (chapterChoice == "chapter 1")
             {
@@ -190,24 +257,15 @@ public class Program
     }
 
 
-    //TUTORIAL
+    // TUTORIAL
     static void Tutorial(List<string> inventory)
     {
         int tutorialHealth = 10;
         int messageignored = 0;
 
+        PressTo("Tutorial");
 
-        Console.WriteLine("");
-        myText("Tutorial loading...");
-        myText("Press SPACE to continue...");
 
-        while (true)
-        {
-            if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
-            {
-                break;
-            }
-        }
         Console.WriteLine("");
         myText("Welcome to the tutorial " + name);
         myText("This is a choice based game, that goes on with your decisions");
@@ -216,11 +274,12 @@ public class Program
         Console.WriteLine("");
 
 
-        //Choices example
+        // Choices example
         while (true)
         {
             myText("You find yourself in a room. There are two doors");
             myText("Which door do you choose? (left/right)");
+
             string decision = getMec(inventory);
 
             if (decision == "left")
@@ -242,18 +301,22 @@ public class Program
             }
         }
 
+
         Console.WriteLine("");
         myText("See, you made a decision");
         myText("But it's not always that easy");
         myText("Some choices can lead to unexpected things");
         Console.WriteLine("");
 
-        //Consequences example
+
+        // Consequences example
         while (true)
         {
             myText("You see a killer behind the door");
             myText("Now the killer is coming towards you");
-            myText("Dou you -run- or -fight-?");
+            myText(">Run", 0);
+            myText(">Fight", 0);
+
             string decision = getMec(inventory);
 
             if (decision == "fight")
@@ -272,27 +335,31 @@ public class Program
             }
             else
             {
-                Console.WriteLine("");
-                myText("You gotta be quicker, the kille got your hand");
+                myText("You gotta be quicker, the killer got your hand");
                 myText("You take 7 damage");
                 tutorialHealth = tutorialHealth - 7;
                 break;
             }
         }
 
+
         Console.WriteLine("");
         myText("Your max health is 10 and now you have...");
-        myText(tutorialHealth.ToString() + " healths");
+        myText(tutorialHealth.ToString() + " health");
+
         tutorialHealth = 10;
+
         Console.WriteLine("");
         myText("Last thing you need to know is, how to use your inventory");
         myText("To look at your inventory write 'inventory'");
         myText("You can type 'use itemname' to use an item while you are in inventory");
         myText("And type only itemname to get information about it");
         Console.WriteLine("");
+
         inventory.Add("water");
 
-        //Using item example
+
+        // Using item example
         while (true)
         {
             if (messageignored >= 2)
@@ -300,12 +367,16 @@ public class Program
                 Console.WriteLine("");
                 myText("You died of thirst");
                 myText("Happy now?");
+
                 messageignored = 0;
                 inventory.Remove("water");
+
                 break;
             }
+
             Console.WriteLine("");
             myText("You got thirsty after the fight");
+
             string decision = getMec(inventory);
 
             if (decision == "use:water")
@@ -321,13 +392,13 @@ public class Program
             }
             else
             {
-                if (messageignored == 0)
+                if (messageignored == 0 && decision != "back")
                 {
                     Console.WriteLine("");
                     myText("Look, you can die, please drink something");
                     messageignored++;
                 }
-                else if (messageignored == 1)
+                else if (messageignored == 1 && decision != "back")
                 {
                     Console.WriteLine("");
                     myText("You think this is a joke?");
@@ -336,210 +407,97 @@ public class Program
             }
         }
 
+
         Console.WriteLine("");
         myText("If you need help you can always type 'help' to get information");
+
         FirstChapter(inventory);
     }
 
 
-    //CHAPTER 1
+    // CHAPTER 1
     static void FirstChapter(List<string> inventory)
     {
-        inventory.Add("small knife");
-        inventory.Add("key 231");
-        inventory.Add("photograph");
+        AddItem("small knife");
+        AddItem("key 231");
+        AddItem("photograph");
 
         bool lookedAround = false;
         bool checkedSelf = false;
         bool listened = false;
 
-        
-        Console.WriteLine("");
-        myText("Loading...");
-        Console.WriteLine("");
-        myText("CHAPTER 1");
-        myText("Press SPACE to continue...");
 
-        while (true)
+        PressTo("CHAPTER 1");
+
+        Console.WriteLine("");
+
+        TxtToCode("Chapter1_flashback");
+        TxtToCode("Chapter1_room");
+
+
+
+        // Helper comes
+        myText("You remain where you are for a while.");
+
+        myText("Suddenly, there is a knock on the door.");
+        myText("\"Knock knock.\"");
+
+        myText("The doorknob turns, and the door creaks open.");
+
+        myText("?: \"" + name + ", are you still in here?\"");
+
+        myText("A short woman, who looks to be in her twenties, stands in front of you.");
+        myText("The waiter's uniform she is wearing seems to suit her wavy hair.");
+        myText("Her green eyes briefly scan you.");
+        myText("She seems to be waiting for an answer.");
+
+
+        Console.WriteLine("[For dialogue choices you only need to write the number]");
+
+        myText("> 1. I will get back to work, sorry.");
+        myText("> 2. Ask where you are.");
+
+
+        string decision2 = getMec(inventory);
+
+
+        if (decision2 == "1")
         {
-            if (Console.ReadKey(true).Key == ConsoleKey.Spacebar)
-            {
-                break;
-            }
+            myText("She squints and looks at you again.");
+            myText("?: \"Is everything alright?\"");
+            myText("\"I... um...\"");
+            myText("?: \"Or are you... ?\"");
+        }
+        else if (decision2 == "2")
+        {
+            myText("?: \"We're at Brian Hall. Is everything alright?\"");
+            myText("For a while, the two of you simply stare at each other.");
+            myText("?: \"" + name + "...\"");
+            myText("\"Y-yes?\"");
         }
 
-        myText("");
-        myText("\"Hey " + name + ", I'm upstairs. Come here.\"");
-        myText("You turn towards the source of the voice.");
-        myText("You see her holding a cup of steaming tea in her delicate fingers.");
-        myText("Her hair is tied behind her head.");
-        myText("Around her neck hangs a necklace with a dark blue emerald in the middle.");
-        myText("Her dark green dress makes her look like part of the plants surrounding the balcony.");
 
-        myText("You quickly climb the stairs.");
-        myText("Among the flowers covering the balcony, she sits in the middle of the lilies.");
-        myText("Although her straw hat covers most of her face, you can tell that she is happy.");
-        myText("You walk towards the table.");
-        myText("The plate of cookies in the middle immediately catches your attention.");
-        myText("\"Your favourites. But you're a little late today.\"");
-        myText("You try to say something.");
-        myText("But your throat feels as if something is stuck in it.");
+        myText("She approaches you and takes your hand.");
 
-        myText("\"Is something wrong?\"");
+        myText("You pull your hand away on instinct, but she doesn't react.");
 
-        myText("Your vision begins to blur.");
+        myText("?: \"Oh no.\"");
+        myText("?: \"Someone erased your memory!\"");
 
-        myText("\"What's wrong?\"", 50);
-        myText("\"Why?\"", 70);
-        myText("\"Why?\"", 80);
-        myText("\"Why...\"", 90);
-        myText("Your knees begin to shake.");
-        myText("She raises her head and looks at you.");
+        myText("\"I have no idea what happened.\"");
+        myText("\"Why am I here, and what are we doing?\"");
 
-        myText("But you can't see anything anymore.");
+        myText("She fidgets with her dress as she examines you.");
 
-        myText("Only a completely white face.");
+        myText("After thinking for a few seconds, she seems to have made up her mind.");
 
-        myText("\"Why... why... why...\"", 120);
-        myText("");
-        myText("You wake up in terror.",0);
-        myText("For a few seconds, you can do nothing but breathe heavily.");
+        myText("?: \"We're behind schedule. We need to get to the hall immediately.\"");
+        myText("?: \"I can explain everything afterwards.\"");
 
-        myText("Where am I?", 80);
+        myText("She extends her pale hands towards you.");
 
-        while (true)
-        {
-            Console.WriteLine("");
-            Console.WriteLine("> look around");
-            Console.WriteLine("> check yourself");
-            Console.WriteLine("> listen");
-            
-            string decision = getMec(inventory);
+        myText("When you take her hand, she pulls you up with unexpected strength.");
 
-            if (decision == "look around")
-            {
-                if (!lookedAround)
-                {
-                    myText("");
-                    myText("As you calm down, you look around.");
-                    myText("You are lying on the floor in the middle of the room.");
-                    myText("There is a door directly in front of you, and several lockers behind you.");
-                    myText("The walls are covered with posters of musicians and actors.");
-                    myText("There are names written on the lockers.");
-                    myText("...");
-
-                    lookedAround = true;
-                }
-                else
-                {
-                    myText("");
-                    myText("You already looked around.");
-                }
-            }
-
-            else if (decision == "check yourself")
-            {
-                if (!checkedSelf)
-                {
-                    myText("");
-                    myText("You check yourself.");
-                    myText("You don't seem to have any wounds or feel any pain.");
-                    myText("You're wearing what appears to be a waiter's uniform.");
-                    myText("You notice a few things inside your inner pocket.");
-                    myText("A photograph, a small knife, and a key marked with the number 231.");
-                    myText("...");
-                    checkedSelf = true;
-                }
-                else
-                {
-                    myText("");
-                    myText("You already checked yourself.");
-                }
-            }
-
-            else if (decision == "listen")
-            {
-                if (!listened)
-                {
-                    myText("");
-                    myText("You listen carefully.");
-                    myText("You can hear a violin playing somewhere outside, along with faint conversations.");
-                    myText("You can't make out anything else.");
-                    myText("The sounds don't seem chaotic, though.");
-                    myText("...");
-                    listened = true;
-                }
-                else
-                {
-                    myText("");
-                    myText("You listen again, but don't notice anything new.");
-                }
-            }
-            else if (decision == "use:photograph")
-            {
-                myText("");
-                myText("You look at the photograph.");
-                myText("It shows you standing next to a woman.");
-                myText("You're wearing an elegant suit, and you look happy.");
-                myText("But when you look at the woman beside you, her face appears blurry.");
-
-                myText("You can't remember who she is.");
-
-                myText("You turn the photograph around.");
-                myText("There is a number written on the back.");
-
-                myText("231", 200);
-            }
-            else if (decision == "use:small knife")
-            {
-                myText("");
-                myText("A simple, small knife.");
-                myText("There is nothing particularly remarkable about it.");
-                myText("Still, it looks like it could be useful.");
-
-                myText("...");
-            }
-            else if (decision == "use:key 231")
-            {
-                myText("");
-                myText("A slightly old key.");
-                myText("The number 231 is engraved on the keychain.");
-                myText("You have no idea what it opens.");
-
-                myText("...");
-            }
-            else if (decision.StartsWith("use:"))
-            {
-                myText("");
-                myText("You can't use that here.");
-            }
-            else
-            {
-                myText("");
-                myText("You don't know what to do.");
-            }
-            if ((lookedAround && checkedSelf) || (lookedAround && listened) || (checkedSelf && listened))
-            {
-                break;
-            }
-        }
-
-        //Helper comes
-        myText("Thats all for now ('-')");
-
-
-
-
-
-
-
-
+        myText("The two of you head towards the door.");
     }
-
-
-
-
-
 }
-
-
