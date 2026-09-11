@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
-using System.IO;
-using System.IO;
+using System.Text.RegularExpressions;
+using static System.Net.Mime.MediaTypeNames;
 
 
 public class Program
 {
 
     static string name;
+    public static string parts;
 
     static List<string> inventory = new List<string>();
 
@@ -23,36 +26,26 @@ public class Program
     };
 
     //txt into code
-    static void TxtToCode(string file)
+    public static string ReadStory(string file)
     {
-        int lineNumber = 0;
         string path = Path.Combine(
             @"C:\dev\M319\Entscheidung-Game\Entscheidung-Game\Story",
             file + ".txt"
         );
 
-        using StreamReader reader = new StreamReader(path);
+        return File.ReadAllText(path);
 
-        string? line;
+    }
 
-        while ((line = reader.ReadLine()) != null)
+    public static string ReadParts(string part)
+    {
+        if (part.Contains("[CHOICE]"))
         {
-            if (line == "CHOICE")
-            {
-                string decision = Console.ReadLine();
-
-                    while(line != "ENDCHOICE")
-                    {
-                        
-                    }
-            }
-            else
-            {
-                Console.WriteLine(line);
-            }
+            string txtDecision = Console.ReadLine();
+            
         }
-    }                
-
+        return part;
+    }
 
     // Animated text version of Console.WriteLine
     static void myText(string input, int speed = 30)
@@ -196,7 +189,6 @@ public class Program
             }
         }
     }
-
 
     // MAIN
     public static void Main()
@@ -431,73 +423,10 @@ public class Program
 
         Console.WriteLine("");
 
-        TxtToCode("Chapter1_flashback");
-        TxtToCode("Chapter1_room");
+        string story = ReadStory("Chapter1_3helper");  
+        string[] parts = story.Split("[CHOICES]");
+        myText(parts[0]);
+        myText(parts[1]);
 
-
-
-        // Helper comes
-        myText("You remain where you are for a while.");
-
-        myText("Suddenly, there is a knock on the door.");
-        myText("\"Knock knock.\"");
-
-        myText("The doorknob turns, and the door creaks open.");
-
-        myText("?: \"" + name + ", are you still in here?\"");
-
-        myText("A short woman, who looks to be in her twenties, stands in front of you.");
-        myText("The waiter's uniform she is wearing seems to suit her wavy hair.");
-        myText("Her green eyes briefly scan you.");
-        myText("She seems to be waiting for an answer.");
-
-
-        Console.WriteLine("[For dialogue choices you only need to write the number]");
-
-        myText("> 1. I will get back to work, sorry.");
-        myText("> 2. Ask where you are.");
-
-
-        string decision2 = getMec(inventory);
-
-
-        if (decision2 == "1")
-        {
-            myText("She squints and looks at you again.");
-            myText("?: \"Is everything alright?\"");
-            myText("\"I... um...\"");
-            myText("?: \"Or are you... ?\"");
-        }
-        else if (decision2 == "2")
-        {
-            myText("?: \"We're at Brian Hall. Is everything alright?\"");
-            myText("For a while, the two of you simply stare at each other.");
-            myText("?: \"" + name + "...\"");
-            myText("\"Y-yes?\"");
-        }
-
-
-        myText("She approaches you and takes your hand.");
-
-        myText("You pull your hand away on instinct, but she doesn't react.");
-
-        myText("?: \"Oh no.\"");
-        myText("?: \"Someone erased your memory!\"");
-
-        myText("\"I have no idea what happened.\"");
-        myText("\"Why am I here, and what are we doing?\"");
-
-        myText("She fidgets with her dress as she examines you.");
-
-        myText("After thinking for a few seconds, she seems to have made up her mind.");
-
-        myText("?: \"We're behind schedule. We need to get to the hall immediately.\"");
-        myText("?: \"I can explain everything afterwards.\"");
-
-        myText("She extends her pale hands towards you.");
-
-        myText("When you take her hand, she pulls you up with unexpected strength.");
-
-        myText("The two of you head towards the door.");
     }
 }
