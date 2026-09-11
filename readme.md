@@ -18,7 +18,6 @@ Ich bin noch über Qv und Lernatelierprozess informiert geworden. Ich habe meine
 - [x] Eine neue Mechanic finden und ins Spiel bringen
 - [x] Eine stabile version erstellen und neue Mechanics planen
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 # Lern-Periode 1
 28.08.2026
 
@@ -43,10 +42,20 @@ Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialou
 
 ## 11.9.2026 (Planung)
 - [ ] TxtToCode fertigstellen. Funktion muss if, variablen etc. verstehen und input/output richtig geben können
-- [ ] Alle Dialougen auf Tutorial und Chapter 1 als txt umwandeln, damit wird game logic und spiel getrennt
-- [ ] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
+- [x] Alle Dialougen auf Tutorial und Chapter 1 als txt umwandeln, damit wird game logic und spiel getrennt
+- [x] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Lern-Periode 1
+11.09.2026
 
+## 11.9.2026
+Ich habe probiert, umwandlung des Funktion TxtToCode zu erstellen. Es ist eigentlich kompliziert und nimmt viel Zeit. Nachher habe ich mit Fight mechanics angefangen und alle Dialougen in Chapter 1 zu einem .txt Datei umgewandelt. Ich musste noch die Texts anpassen, damit nachher C# die Funktionen lesen kann.
 
+## 18.9.2026 (Planung)
+- [ ] TxtToCode mit Methoden funktionierbar machen
+- [ ] Fight Mechanics fertigstellen und ins Spiel hinzufügen
+- [ ] Main Menü fürs Spiel entwickeln
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
