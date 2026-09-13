@@ -45,11 +45,6 @@ Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialou
 - [x] Alle Dialougen auf Tutorial und Chapter 1 als txt umwandeln, damit wird game logic und spiel getrennt
 - [x] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## HA Arbeitspakete - 13.09.2026
-
-Ich habe Basis für den Fight Mechanics entwickelt. Es funktioniert ähnlich zu den Turn-based-games. Es gibt eine Hitwall und man muss an dem richtigen Zeit irgendeine Taste drücken.
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Lern-Periode 1
 11.09.2026
 
@@ -61,6 +56,13 @@ Ich habe probiert, umwandlung des Funktion TxtToCode zu erstellen. Es ist eigent
 - [ ] Fight Mechanics fertigstellen und ins Spiel hinzufügen
 - [ ] Main Menü fürs Spiel entwickeln
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## HA Arbeitspakete - 13.09.2026
+Ich habe Basis für den Fight Mechanics entwickelt. Es funktioniert ähnlich zu den Turn-based-games. Es gibt eine Hitwall und man muss an dem richtigen Zeit irgendeine Taste drücken.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Lern-Periode 1
+18.09.2026
+
+## 18.9.2026
 
 
