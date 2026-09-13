@@ -1,30 +1,84 @@
-﻿string character = "x";
-string hitWall = "<------------------------------------------------------------>";
-string hitRangeBeginning = "[";
-string hitRangeEnding = "]";
-int characterPosition = 0;
+﻿using System.Threading;
 
+string character = "x";
+string hitWall = "<-------------------------------------------------------->";
+string rangeBeg = "[";
+string rangeEnd = "]";
+int rangePosition;
+int rangeEndPosition;
 Random rnd = new Random();
-int i = rnd.Next(1, 53);
 
 
-i = rnd.Next(1, 53);
+
+rangePosition = rnd.Next(1, 51);
+rangeEndPosition = rangePosition + 5;
+
+string currentWall = hitWall;
+
+currentWall = currentWall.Remove(rangePosition, rangeBeg.Length).Insert(rangePosition, rangeBeg);
+currentWall = currentWall.Remove(rangeEndPosition, rangeEnd.Length).Insert(rangeEndPosition, rangeEnd);
 
 
-Console.SetCursorPosition(30, 3);
+int delay = 15;
+int direction = 1;
 
-//Hitrange is being integrated into the wall
-if (hitWall.Length > hitRangeBeginning.Length + i)
+for (int a = 1; ; a += direction)
 {
-    hitWall = hitWall.Remove(i, hitRangeBeginning.Length).Insert(i, hitRangeBeginning);
-    hitWall = hitWall.Remove(i += 8, hitRangeEnding.Length).Insert(i += 8, hitRangeEnding);
+    if (a == rangePosition || a == rangeEndPosition)
+    {
+        if (a >= hitWall.Length - 2)
+        {
+            direction = -1;
+        }
+        if (a <= 1)
+        {
+            direction = 1;
+        }
+        continue;
+    }
 
-    Console.WriteLine(hitWall);
+    if (Console.KeyAvailable)
+    {
+        Console.ReadKey(true);
+        if (rangePosition < a && a< rangeEndPosition)
+        {
+            Console.WriteLine("Hit");
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Boo");
+            break;
+        }
+    }
+
+    Console.SetCursorPosition(37, 3);
+    currentWall = currentWall.Remove(a, 1).Insert(a, character);
+    Console.WriteLine(currentWall);
+    currentWall = currentWall.Remove(a, 1).Insert(a, "-");
+    Thread.Sleep(delay);
+
+    if (delay > 1)
+    {
+        delay -= 1;
+    }
+
+    if (a >= hitWall.Length - 2)
+    {
+        direction = -1;
+    }
+    if (a <= 1)
+    {
+        direction = 1;
+    }
 }
+    
 
-Console.SetCursorPosition(30, 3);
 
-hitWall = hitWall.Remove(characterPosition).Insert(characterPosition, character);
-Console.WriteLine(hitWall);
+
+
+
+
+
 
 
