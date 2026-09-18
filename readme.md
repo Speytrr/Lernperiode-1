@@ -1,5 +1,10 @@
 # Lern-Periode 1
 21.8 bis 21.08
+## Fertiges Projekt
+Das Programm funktioniert wie ein text-basiertes Spiel Engine. Es gibt funktionen für Entscheidungen, Inventar und einen Hitwall. Alles kann man selber modifizieren.
+<img width="800" height="231" alt="fightmechanics" src="https://github.com/user-attachments/assets/01c3c211-3248-4954-8a9f-e3a67d7db373" />
+<img width="310" height="137" alt="image" src="https://github.com/user-attachments/assets/b5a3c0c2-a9d0-4159-b9a3-d722951d83f8" />
+
 
 ## Grob-Planung
 1. Wo stehen Sie mit Ihren Noten? In welchen Modulen waren Sie besonders stark; in welchen sind die ungenügend? Welche davon sind besonders wichtig?
@@ -53,8 +58,8 @@ Ich habe probiert, umwandlung des Funktion TxtToCode zu erstellen. Es ist eigent
 
 ## 18.9.2026 (Planung)
 - [ ] TxtToCode mit Methoden funktionierbar machen
-- [ ] Fight Mechanics fertigstellen und ins Spiel hinzufügen
-- [ ] Main Menü fürs Spiel entwickeln
+- [x] Fight Mechanics fertigstellen und ins Spiel hinzufügen
+- [x] Main Menü fürs Spiel entwickeln
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## HA Arbeitspakete - 13.09.2026
 Ich habe Basis für den Fight Mechanics entwickelt. Es funktioniert ähnlich zu den Turn-based-games. Es gibt eine Hitwall und man muss an dem richtigen Zeit irgendeine Taste drücken.
@@ -64,5 +69,5 @@ Ich habe Basis für den Fight Mechanics entwickelt. Es funktioniert ähnlich zu 
 18.09.2026
 
 ## 18.9.2026
-
+Ich habe ein einfaches Main Menu erstellt und habe figtmechanics.cs ins program.cs als ein Funktion hinzugefügt. Ich habe den Code bereinigt und Variablen und andere Elemente klein geändert. 
 
