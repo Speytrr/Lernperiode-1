@@ -76,9 +76,9 @@ Ich habe ein einfaches Main Menu erstellt und habe figtmechanics.cs ins program.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Reflexion
-Ich muss meine Arbeitspakete mehr detailierter und einfacher machen. Sonst längt es nicht mit alle Planen
-Ich muss zuerst anschauen, ob etwas in Zukunft Probleme lösen kann, bevor ich etwas festlege oder erstelle
-Ich muss auf dem Grundstruktur mehr aufpassen oder nachher kommt mehrere Probleme raus
-Ich muss grosse Aufgaben in kleine Aufträge teilen, statt aufgeben und etwas anderes zu probieren
+- Ich muss meine Arbeitspakete mehr detailierter und einfacher machen. Sonst längt es nicht mit alle Planen
+- Ich muss zuerst anschauen, ob etwas in Zukunft Probleme lösen kann, bevor ich etwas festlege oder erstelle
+- Ich muss auf dem Grundstruktur mehr aufpassen oder nachher kommt mehrere Probleme raus
+- Ich muss grosse Aufgaben in kleine Aufträge teilen, statt aufgeben und etwas anderes zu probieren
 
 
