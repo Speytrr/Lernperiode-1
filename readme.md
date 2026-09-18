@@ -84,4 +84,5 @@ Ich habe ein einfaches Main Menu erstellt und habe figtmechanics.cs ins program.
 - Ich muss auf dem Grundstruktur mehr aufpassen, sonst entsteht später mehrere Probleme
 - Ich muss grosse Aufgaben in kleine Aufträge teilen, statt aufgeben und etwas anderes zu probieren
 
+- Ich finde alte "getMec" meine Meilensteine, wirklich tolle Idee und Exekution
 
