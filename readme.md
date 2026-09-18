@@ -2,7 +2,9 @@
 21.8 bis 21.08
 ## Fertiges Projekt
 Das Programm funktioniert wie ein text-basiertes Spiel Engine. Es gibt funktionen für Entscheidungen, Inventar und einen Hitwall. Alles kann man selber modifizieren.
+
 <img width="800" height="231" alt="fightmechanics" src="https://github.com/user-attachments/assets/01c3c211-3248-4954-8a9f-e3a67d7db373" />
+
 <img width="310" height="137" alt="image" src="https://github.com/user-attachments/assets/b5a3c0c2-a9d0-4159-b9a3-d722951d83f8" />
 
 
