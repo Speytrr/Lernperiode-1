@@ -7,6 +7,7 @@ Das Programm funktioniert wie ein text-basiertes Spiel Engine für RPGs. Es gibt
 
 <img width="310" height="137" alt="image" src="https://github.com/user-attachments/assets/b5a3c0c2-a9d0-4159-b9a3-d722951d83f8" />
 
+Am Anfang wollte ich ein ganzes Spiel machen, aber nachher habe ich schnell bemerkt, dass ich nicht genügende Zeit habe. So habe ich mein Plan aufs Engine geändert. Am letzte zwei Wochen habe ich probiert, Dialougen aus Code zu einem txt. Datei zu bringen. Es hat nicht ganz geklappt. Ich habe es immer noch in dem Code aber aktuell wird es nicht benutzt.
 
 ## Grob-Planung
 1. Wo stehen Sie mit Ihren Noten? In welchen Modulen waren Sie besonders stark; in welchen sind die ungenügend? Welche davon sind besonders wichtig?
@@ -45,7 +46,7 @@ Heute habe ich mit dem Text-Spiel angefangen. Ich habe einen Tutorial für Mecha
 - [ ] Fight Mechanics planen, entscheiden ob es benutzt wird, entwickeln, testen
 
 ## 04.9.2026
-Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialougen bisschen viel Platz nehmen. Deswegen habe ich getMec verbessert und mit TxtToCOde funktion angefangen. Ich schreibe die Geschichte ins eine Textdatei und dann wird es von Programm ins Spiel hinzugefügt. Ich habe die Basis fertiggestellt aber ich muss noch die Funktionen verfügbar machen.
+Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialougen bisschen viel Platz nehmen. Deswegen habe ich getMec verbessert und mit TxtToCode funktion angefangen. Ich schreibe die Geschichte ins eine Textdatei und dann wird es von Programm ins Spiel hinzugefügt. Ich habe die Basis fertiggestellt aber ich muss noch die Funktionen verfügbar machen.
 
 ## 11.9.2026 (Planung)
 - [ ] TxtToCode fertigstellen. Funktion muss if, variablen etc. verstehen und input/output richtig geben können
@@ -56,7 +57,7 @@ Heute habe ich bemerkt, dass getMec sehr kompliziert geworden ist und die Dialou
 11.09.2026
 
 ## 11.9.2026
-Ich habe probiert, umwandlung des Funktion TxtToCode zu erstellen. Es ist eigentlich kompliziert und nimmt viel Zeit. Nachher habe ich mit Fight mechanics angefangen und alle Dialougen in Chapter 1 zu einem .txt Datei umgewandelt. Ich musste noch die Texts anpassen, damit nachher C# die Funktionen lesen kann.
+Ich habe probiert, Umwandlung des Funktion TxtToCode zu erstellen. Es ist eigentlich kompliziert und nimmt viel Zeit. Nachher habe ich mit Fight mechanics angefangen und alle Dialougen in Chapter 1 zu einem .txt Datei umgewandelt. Ich musste noch die Texts anpassen, damit nachher C# die Funktionen lesen kann.
 
 ## 18.9.2026 (Planung)
 - [ ] TxtToCode mit Methoden funktionierbar machen
@@ -72,4 +73,12 @@ Ich habe Basis für den Fight Mechanics entwickelt. Es funktioniert ähnlich zu 
 
 ## 18.9.2026
 Ich habe ein einfaches Main Menu erstellt und habe figtmechanics.cs ins program.cs als ein Funktion hinzugefügt. Ich habe den Code bereinigt und Variablen und andere Elemente klein geändert. 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Reflexion
+Ich muss meine Arbeitspakete mehr detailierter und einfacher machen. Sonst längt es nicht mit alle Planen
+Ich muss zuerst anschauen, ob etwas in Zukunft Probleme lösen kann, bevor ich etwas festlege oder erstelle
+Ich muss auf dem Grundstruktur mehr aufpassen oder nachher kommt mehrere Probleme raus
+Ich muss grosse Aufgaben in kleine Aufträge teilen, statt aufgeben und etwas anderes zu probieren
+
 
