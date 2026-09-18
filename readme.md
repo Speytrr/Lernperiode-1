@@ -1,7 +1,7 @@
 # Lern-Periode 1
 21.8 bis 21.08
 ## Fertiges Projekt
-Das Programm funktioniert wie ein text-basiertes Spiel Engine. Es gibt funktionen für Entscheidungen, Inventar und einen Hitwall. Alles kann man selber modifizieren.
+Das Programm funktioniert wie ein text-basiertes Spiel Engine für RPGs. Es gibt funktionen für Entscheidungen, Inventar und einen Hitwall. Alles kann man selber modifizieren.
 
 <img width="800" height="231" alt="fightmechanics" src="https://github.com/user-attachments/assets/01c3c211-3248-4954-8a9f-e3a67d7db373" />
 
