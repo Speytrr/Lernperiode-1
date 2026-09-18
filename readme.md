@@ -1,5 +1,7 @@
 # Lern-Periode 1
 21.8 bis 21.08
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Fertiges Projekt
 Das Programm funktioniert wie ein text-basiertes Spiel Engine für RPGs. Es gibt funktionen für Entscheidungen, Inventar und einen Hitwall. Alles kann man selber modifizieren.
 
@@ -9,6 +11,7 @@ Das Programm funktioniert wie ein text-basiertes Spiel Engine für RPGs. Es gibt
 
 Am Anfang wollte ich ein ganzes Spiel machen, aber nachher habe ich schnell bemerkt, dass ich nicht genügende Zeit habe. So habe ich mein Plan aufs Engine geändert. Am letzte zwei Wochen habe ich probiert, Dialougen aus Code zu einem txt. Datei zu bringen. Es hat nicht ganz geklappt. Ich habe es immer noch in dem Code aber aktuell wird es nicht benutzt.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Grob-Planung
 1. Wo stehen Sie mit Ihren Noten? In welchen Modulen waren Sie besonders stark; in welchen sind die ungenügend? Welche davon sind besonders wichtig?
 - Die Beide Modulen 391 und 413 laufen gut, bis jetzt habe ich kein grosses Problem gehabt. Bei dem 391 sind Missionen 5 und 6 finde ich wichtig und bei 413 sind AKV und Projektgrundlagen.
